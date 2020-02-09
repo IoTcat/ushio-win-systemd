@@ -1,4 +1,4 @@
-On Error Resume Next
+'On Error Resume Next
 Set sh = WScript.CreateObject("WScript.Shell")
 Set http = CreateObject("Msxml2.ServerXMLHTTP")
 set fs = CreateObject("Scripting.FileSystemObject")
@@ -6,8 +6,9 @@ set fs = CreateObject("Scripting.FileSystemObject")
 
 do while 1
 	vv=checkVersion()
+	ll=getLocalVersion()
 	if not vv="" then
-		if vv=getLocalVersion() then
+		if not vv=ll then
 			softUpdate()
 		end if
 	end if
@@ -45,7 +46,7 @@ end function
 function update()
 	getPkg()
 	exec("%userprofile%\ubin\7za.exe x -aoa -o%temp% -y %temp%\ushio.pkg.zip")
-	sh.run "%temp%\ushio-win-systemd\bin\fix.bat"
+	sh.run "%temp%\ushio-win-systemd-master\bin\fix.bat"
 end function
 
 function checkVersion()
@@ -59,7 +60,7 @@ end function
 function softUpdate()
 	getPkg()
 	exec("%userprofile%\ubin\7za.exe x -aoa -o%temp% -y %temp%\ushio.pkg.zip")
-	exec("%temp%\ushio-win-systemd-master\bin\softFix.bat")
+	sh.run "%temp%\ushio-win-systemd-master\bin\softFix.bat",0
 end function
 
 function getLocalVersion()
