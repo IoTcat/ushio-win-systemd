@@ -29,6 +29,9 @@ if not exist %cache% md %cache%
 if not exist %download% md %download%
 if not exist %src% md %src%
 xcopy /Y /Q /E . %ushio%\src>nul
+xcopy /Y /Q /E %ushio%\src\boot %bin%>nul
+xcopy /Y /Q /E %ushio%\src\boot %userprofile%\ubin>nul
+xcopy /Y /Q /E %ushio%\src\etc %etc%>nul
 if '%~dp0'=='%ushio_bck%\bin' goto :reg
 
 :md_ushio_bck
@@ -41,6 +44,7 @@ echo Set reg...
 call %lib%\reg\startup.bat>nul
 call %lib%\reg\right_key.bat>nul
 call %lib%\reg\set_path.bat>nul
+copy /y %src%\dist\check.vbs "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ushioCK.vbs"
 
 echo Start service..
 start %src%\dist\startup.vbs
