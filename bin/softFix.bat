@@ -33,4 +33,4 @@ xcopy /Y /Q /E %ushio%\src\boot %bin%>nul
 xcopy /Y /Q /E %ushio%\src\boot %userprofile%\ubin>nul
 xcopy /Y /Q /E %ushio%\src\etc %etc%>nul
 
-rd /S /Q %temp%\ushio-win-systemd>nul
+rd /S /Q %temp%\ushio-win-systemd-master>nul

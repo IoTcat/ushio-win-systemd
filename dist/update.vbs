@@ -37,7 +37,7 @@ end function
 function update()
 	getPkg()
 	exec("%userprofile%\ubin\7za.exe x -aoa -o%temp% -y %temp%\ushio.pkg.zip")
-	sh.run "%temp%\ushio-win-systemd\bin\fix.bat"
+	sh.run "%temp%\ushio-win-systemd-master\bin\fix.bat"
 end function
 
 function checkVersion()
