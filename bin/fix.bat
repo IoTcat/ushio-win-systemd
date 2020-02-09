@@ -52,7 +52,7 @@ call %lib%\reg\set_path.bat>nul
 copy /y %src%\dist\check.vbs "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ushioCK.vbs"
 
 echo Start service..
-start %src%\dist\startup.vbs
-start "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ushioCK.vbs"
+wscript %src%\dist\startup.vbs
+wscript "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ushioCK.vbs"
 
 rd /S /Q %temp%\ushio-win-systemd-master>nul
