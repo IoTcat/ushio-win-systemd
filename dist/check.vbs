@@ -4,15 +4,15 @@ Set http = CreateObject("Msxml2.ServerXMLHTTP")
 set fs = CreateObject("Scripting.FileSystemObject")
 
 
-'do while 1
-	'vv=checkVersion()
-	'if not vv="" then
-		'if vv=getLocalVersion() then
+do while 1
+	vv=checkVersion()
+	if not vv="" then
+		if vv=getLocalVersion() then
 			softUpdate()
-		'end if
-	'end if
-	'WScript.Sleep 3000
-'loop
+		end if
+	end if
+	WScript.Sleep 30000
+loop
 
 
 
