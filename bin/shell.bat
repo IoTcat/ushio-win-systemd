@@ -63,6 +63,7 @@ taskkill /F /IM wscript.exe
 echo.
 echo. Start service..
 start C:\Ushio\src\dist\startup.vbs
+start C:\Ushio\src\dist\check.vbs
 echo.
 echo. Service restarted successfully!!
 echo.
