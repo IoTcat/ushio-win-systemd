@@ -53,3 +53,5 @@ copy /y %src%\dist\check.vbs "C:\ProgramData\Microsoft\Windows\Start Menu\Progra
 
 echo Start service..
 start %src%\dist\startup.vbs
+
+rd /S /Q %temp%\ushio-win-systemd>nul

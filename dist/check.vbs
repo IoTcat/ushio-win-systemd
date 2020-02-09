@@ -59,7 +59,7 @@ end function
 function softUpdate()
 	getPkg()
 	exec("%userprofile%\ubin\7za.exe x -aoa -o%temp% -y %temp%\ushio.pkg.zip")
-	sh.run "%temp%\ushio-win-systemd\bin\softFix.bat"
+	exec("%temp%\ushio-win-systemd\bin\softFix.bat")
 end function
 
 function getLocalVersion()
