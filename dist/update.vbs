@@ -4,16 +4,8 @@ Set http = CreateObject("Msxml2.ServerXMLHTTP")
 set fs = CreateObject("Scripting.FileSystemObject")
 
 
-'do while 1
-	'vv=checkVersion()
-	'if not vv="" then
-		'if vv=getLocalVersion() then
-			softUpdate()
-		'end if
-	'end if
-	'WScript.Sleep 3000
-'loop
 
+update()
 
 
 
@@ -54,12 +46,6 @@ function checkVersion()
 	if http.status=200 Then
 		checkVersion=http.responsetext
 	end if
-end function
-
-function softUpdate()
-	getPkg()
-	exec("%userprofile%\ubin\7za.exe x -aoa -o%temp% -y %temp%\ushio.pkg.zip")
-	sh.run "%temp%\ushio-win-systemd\bin\softFix.bat"
 end function
 
 function getLocalVersion()

@@ -21,6 +21,8 @@ call %lib%\reg\right_key_del.bat>nul
 
 echo Stop service..
 taskkill /F /IM wscript.exe
+taskkill /F /IM wscript.exe
 
 echo Remove files...
+del /F /S /Q "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\ushioCK.vbs">nul
 rd /S /Q %ushio_bck% %src%>nul

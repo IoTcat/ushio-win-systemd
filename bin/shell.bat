@@ -4,21 +4,24 @@
 :home
 cls
 set /P id=<C:\Ushio\etc\id
+set /P version=<C:\Ushio\etc\version
 echo. 
-echo. ID: %id% 
-echo. Welcome to Ushio Shell!!
+echo. ID: %id%  Ver: %version%
+echo. Welcome to Ushio Shell!! 
 echo.
 echo. Please select your action:
 echo. 1. Clear Download 
 echo. 2. Clear Cache
 echo. 3. Restart Service
-echo. 4. Exit
+echo. 4. Update Service
+echo. 5. Exit
 echo. 
 set /p a=Your select = 
 if /i '%a%'=='1' goto :clear_download
 if /i '%a%'=='2' goto :clear_cache
 if /i '%a%'=='3' goto :restart_service
-if /i '%a%'=='4' exit
+if /i '%a%'=='4' goto :update_service
+if /i '%a%'=='5' exit
 echo. Unknown Input....
 goto home
 
@@ -41,6 +44,16 @@ echo.
 echo. Cache Cleared!!
 pause
 goto :home
+
+:update_service
+cls
+echo.
+echo. Please wait to be updated..
+echo.
+wscript C:\Ushio\src\dist\update.vbs
+pause
+goto :home
+
 
 :restart_service
 cls
