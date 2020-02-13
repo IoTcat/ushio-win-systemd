@@ -1,4 +1,4 @@
-'On Error Resume Next
+On Error Resume Next
 Set sh = WScript.CreateObject("WScript.Shell")
 Set http = CreateObject("Msxml2.ServerXMLHTTP")
 set fs = CreateObject("Scripting.FileSystemObject")
